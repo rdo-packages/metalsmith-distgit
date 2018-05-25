@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_b3136f5c",
+        "filename": "python-metalsmith.spec",
+        "patchSetId": 7
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2018-05-25T16:22:28Z",
+      "side": 1,
+      "message": "For DLRN changelog should be empty.",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 186,
+        "endChar": 18
+      },
+      "revId": "2489387061a95d867e1e6b826542994d2512851f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
