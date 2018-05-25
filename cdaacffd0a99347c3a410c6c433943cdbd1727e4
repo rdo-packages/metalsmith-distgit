@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_58c4323f",
+        "filename": "python-metalsmith.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2018-05-25T12:19:05Z",
+      "side": 1,
+      "message": "Missing enable python3 for fedora [1]\n\nhttps://github.com/rdo-packages/ironicclient-distgit/blob/rpm-master/python-ironicclient.spec#L3",
+      "revId": "cdaacffd0a99347c3a410c6c433943cdbd1727e4",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
