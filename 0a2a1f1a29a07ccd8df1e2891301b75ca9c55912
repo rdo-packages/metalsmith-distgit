@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_f8f2e66e",
+        "filename": "python-metalsmith.spec",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2018-05-25T14:16:59Z",
+      "side": 1,
+      "message": "Required packages to run unit tests and not included as requirements for python2-%{name} should be requirements for -tests packages. In this case, mock and testtools should be Requires for -tests subpackages.",
+      "revId": "0a2a1f1a29a07ccd8df1e2891301b75ca9c55912",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_98540a55",
+        "filename": "python-metalsmith.spec",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2018-05-25T14:16:59Z",
+      "side": 1,
+      "message": "openstack-macros is not BR for -doc only, it should go in the initial list of BRs.",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 31
+      },
+      "revId": "0a2a1f1a29a07ccd8df1e2891301b75ca9c55912",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_78513662",
+        "filename": "python-metalsmith.spec",
+        "patchSetId": 5
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2018-05-25T14:16:59Z",
+      "side": 1,
+      "message": "Instead or removing, it\u0027d be better to rename it as defined in fedora policy for python. Example in:\n\nhttps://github.com/rdo-packages/openstackclient-distgit/blob/rpm-master/python-openstackclient.spec#L190-L191",
+      "range": {
+        "startLine": 125,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 37
+      },
+      "revId": "0a2a1f1a29a07ccd8df1e2891301b75ca9c55912",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_d8d042cc",
+        "filename": "python-metalsmith.spec",
+        "patchSetId": 5
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2018-05-25T14:16:59Z",
+      "side": 1,
+      "message": "For python2 executable should also be symlinked to -2 and -2.7:\n\nhttps://github.com/rdo-packages/openstackclient-distgit/blob/rpm-master/python-openstackclient.spec#L195-L196",
+      "revId": "0a2a1f1a29a07ccd8df1e2891301b75ca9c55912",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
