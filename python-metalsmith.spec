@@ -105,6 +105,20 @@ BuildRequires: python2-sphinxcontrib-apidoc
 
 This package contains documentation.
 
+%package -n ansible-role-%{sname}-deployment
+Summary: %{common_summary} - ansible role
+
+# The ansible role uses CLI which is currently provided by the Python 2
+# package. Change this when the CLI is provided by the Python 3 package.
+Requires: python2-%{sname} = %{version}-%{release}
+Requires: ansible >= 2.3
+
+%description -n ansible-role-%{sname}-deployment
+%{common_summary}
+
+This package contains the metalsmith_deployment role to use metalsmith
+in ansible playbooks.
+
 %prep
 %autosetup -n %{sname}-%{upstream_version} -S git
 
@@ -180,5 +194,11 @@ popd
 %files -n python-%{sname}-doc
 %license LICENSE
 %doc doc/build/html README.rst
+
+%files -n ansible-role-%{sname}-deployment
+%license LICENSE
+%doc roles/metalsmith_deployment/README.rst
+%{_datadir}/ansible/roles/metalsmith_deployment
+%exclude %{_datadir}/ansible/roles/metalsmith_deployment/README.rst
 
 %changelog
