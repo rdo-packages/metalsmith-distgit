@@ -182,3 +182,4 @@ popd
 %doc doc/build/html README.rst
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/metalsmith/commit/?id=c91a08fb1681e8330814aecb886a469b90e9f3bb
