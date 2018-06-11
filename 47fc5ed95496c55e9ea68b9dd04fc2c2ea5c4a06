@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_ea72fe7b",
+        "filename": "python-metalsmith.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2018-06-11T16:44:32Z",
+      "side": 1,
+      "message": "I\u0027m not a huge fan of not specifying the role name in this line, but the spec for other ansible roles do the same, so ok for me.",
+      "range": {
+        "startLine": 201,
+        "startChar": 0,
+        "endLine": 201,
+        "endChar": 26
+      },
+      "revId": "47fc5ed95496c55e9ea68b9dd04fc2c2ea5c4a06",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
