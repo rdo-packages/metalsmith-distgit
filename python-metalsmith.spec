@@ -202,3 +202,4 @@ popd
 %exclude %{_datadir}/ansible/roles/metalsmith_deployment/README.rst
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/metalsmith/commit/?id=99cae0ed554f21cdd93b5d3bede0df4bd5a285dc
