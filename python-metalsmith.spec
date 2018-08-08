@@ -4,6 +4,7 @@
 %global with_python3 1
 %endif
 
+%global with_doc 1
 %global sname metalsmith
 
 %global common_summary Bare metal provisioner using Ironic
@@ -94,6 +95,7 @@ Requires: python3-testtools
 
 %endif # with_python3
 
+%if 0%{?with_doc}
 %package -n python-%{sname}-doc
 Summary: %{common_summary} - documentation
 
@@ -104,6 +106,7 @@ BuildRequires: python2-sphinxcontrib-apidoc
 %{common_summary}
 
 This package contains documentation.
+%endif
 
 %package -n ansible-role-%{sname}-deployment
 Summary: %{common_summary} - ansible role
@@ -131,10 +134,12 @@ in ansible playbooks.
 %py3_build
 %endif # with_python3
 
+%if 0%{?with_doc}
 # generate html docs
 sphinx-build -b html doc/source doc/build/html
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
+%endif
 
 %install
 %if 0%{?with_python3}
@@ -191,9 +196,11 @@ popd
 
 %endif # with_python3
 
+%if 0%{?with_doc}
 %files -n python-%{sname}-doc
 %license LICENSE
 %doc doc/build/html README.rst
+%endif
 
 %files -n ansible-role-%{sname}-deployment
 %license LICENSE
