@@ -12,8 +12,8 @@
 %global common_desc_tests Tests for metalsmith.
 
 Name: python-%{sname}
-Version: XXX
-Release: XXX
+Version: 0.6.0
+Release: 1%{?dist}
 Summary: %{common_summary}
 License: ASL 2.0
 URL: https://metalsmith.readthedocs.io/
@@ -209,3 +209,6 @@ popd
 %exclude %{_datadir}/ansible/roles/metalsmith_deployment/README.rst
 
 %changelog
+* Mon Aug 20 2018 RDO <dev@lists.rdoproject.org> 0.6.0-1
+- Update to 0.6.0
+
