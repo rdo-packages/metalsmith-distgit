@@ -41,10 +41,10 @@ BuildRequires: python2-openstacksdk
 BuildRequires: python2-six
 BuildRequires: python2-testtools
 
-Requires: python2-ironicclient
-Requires: python2-openstacksdk
-Requires: python2-pbr
-Requires: python2-six
+Requires: python2-ironicclient >= 1.14.0
+Requires: python2-openstacksdk >= 0.11.0
+Requires: python2-pbr >= 2.0.0
+Requires: python2-six >= 1.10.0
 
 Requires(pre): shadow-utils
 
@@ -76,10 +76,10 @@ BuildRequires: python3-openstacksdk
 BuildRequires: python3-six
 BuildRequires: python3-testtools
 
-Requires: python3-ironicclient
-Requires: python3-openstacksdk
-Requires: python3-pbr
-Requires: python3-six
+Requires: python3-ironicclient >= 1.14.0
+Requires: python3-openstacksdk >= 0.11.0
+Requires: python3-pbr >= 2.0.0
+Requires: python3-six >= 1.10.0
 
 %description -n python3-%{sname}
 %{common_desc}
