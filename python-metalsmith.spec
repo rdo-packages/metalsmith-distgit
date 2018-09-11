@@ -39,6 +39,7 @@ BuildRequires: python2-ironicclient
 BuildRequires: python2-mock
 BuildRequires: python2-openstacksdk
 BuildRequires: python2-six
+BuildRequires: python2-stestr
 BuildRequires: python2-testtools
 
 Requires: python2-ironicclient >= 1.14.0
@@ -74,6 +75,7 @@ BuildRequires: python3-ironicclient
 BuildRequires: python3-mock
 BuildRequires: python3-openstacksdk
 BuildRequires: python3-six
+BuildRequires: python3-stestr
 BuildRequires: python3-testtools
 
 Requires: python3-ironicclient >= 1.14.0
@@ -161,10 +163,10 @@ ln -s metalsmith{-2,}
 popd
 
 %check
-%{__python2} -m unittest discover metalsmith.test
+stestr run
 
 %if 0%{?with_python3}
-%{__python3} -m unittest discover metalsmith.test
+stestr-3 run
 %endif # with_python3
 
 %files -n python2-%{sname}
