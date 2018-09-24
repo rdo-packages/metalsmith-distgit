@@ -23,7 +23,7 @@ Version: XXX
 Release: XXX
 Summary: %{common_summary}
 License: ASL 2.0
-URL: https://metalsmith.readthedocs.io/
+URL: https://docs.openstack.org/metalsmith/latest/
 
 Source0: http://tarballs.openstack.org/%{sname}/%{sname}-%{upstream_version}.tar.gz
 
