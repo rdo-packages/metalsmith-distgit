@@ -1,8 +1,15 @@
-%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
-
-%if 0%{?fedora}
-%global with_python3 1
+# Macros for py2/py3 compatibility
+%if 0%{?fedora} || 0%{?rhel} > 7
+%global pyver %{python3_pkgversion}
+%else
+%global pyver 2
 %endif
+%global pyver_bin python%{pyver}
+%global pyver_sitelib %python%{pyver}_sitelib
+%global pyver_install %py%{pyver}_install
+%global pyver_build %py%{pyver}_build
+# End of macros for py2/py3 compatibility
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global with_doc 1
 %global sname metalsmith
@@ -25,84 +32,51 @@ BuildArch: noarch
 %description
 %{common_desc}
 
-%package -n python2-%{sname}
+%package -n python%{pyver}-%{sname}
 Summary: %{common_summary}
-%{?python_provide:%python_provide python2-%{sname}}
+%{?python_provide:%python_provide python%{pyver}-%{sname}}
+%if %{pyver} == 3
+Obsoletes: python2-%{sname} < %{version}-%{release}
+%endif
 
 BuildRequires: git
 BuildRequires: openstack-macros
-BuildRequires: python2-devel
-BuildRequires: python2-pbr
-BuildRequires: python2-setuptools
+BuildRequires: python%{pyver}-devel
+BuildRequires: python%{pyver}-pbr
+BuildRequires: python%{pyver}-setuptools
 # Required for running unit tests
-BuildRequires: python2-ironicclient
-BuildRequires: python2-mock
-BuildRequires: python2-openstacksdk
-BuildRequires: python2-six
-BuildRequires: python2-stestr
-BuildRequires: python2-testtools
+BuildRequires: python%{pyver}-ironicclient
+BuildRequires: python%{pyver}-mock
+BuildRequires: python%{pyver}-openstacksdk
+BuildRequires: python%{pyver}-six
+BuildRequires: python%{pyver}-stestr
+BuildRequires: python%{pyver}-testtools
 
-Requires: python2-ironicclient >= 1.14.0
-Requires: python2-openstacksdk >= 0.11.0
-Requires: python2-pbr >= 2.0.0
-Requires: python2-six >= 1.10.0
+Requires: python%{pyver}-ironicclient >= 1.14.0
+Requires: python%{pyver}-openstacksdk >= 0.11.0
+Requires: python%{pyver}-pbr >= 2.0.0
+Requires: python%{pyver}-six >= 1.10.0
 
 Requires(pre): shadow-utils
 
-%description -n python2-%{sname}
+%description -n python%{pyver}-%{sname}
 %{common_desc}
 
-%package -n python2-%{sname}-tests
+%package -n python%{pyver}-%{sname}-tests
 Summary: metalsmith tests
-Requires: python2-%{sname} = %{version}-%{release}
-Requires: python2-mock
-Requires: python2-testtools
+Requires: python%{pyver}-%{sname} = %{version}-%{release}
+Requires: python%{pyver}-mock
+Requires: python%{pyver}-testtools
 
-%description -n python2-%{sname}-tests
+%description -n python%{pyver}-%{sname}-tests
 %{common_desc_tests}
-
-%if 0%{?with_python3}
-
-%package -n python3-%{sname}
-Summary: %{common_summary}
-
-%{?python_provide:%python_provide python3-%{sname}}
-BuildRequires: python3-devel
-BuildRequires: python3-pbr
-BuildRequires: python3-setuptools
-# Required for running unit tests
-BuildRequires: python3-ironicclient
-BuildRequires: python3-mock
-BuildRequires: python3-openstacksdk
-BuildRequires: python3-six
-BuildRequires: python3-stestr
-BuildRequires: python3-testtools
-
-Requires: python3-ironicclient >= 1.14.0
-Requires: python3-openstacksdk >= 0.11.0
-Requires: python3-pbr >= 2.0.0
-Requires: python3-six >= 1.10.0
-
-%description -n python3-%{sname}
-%{common_desc}
-
-%package -n python3-%{sname}-tests
-Summary: metalsmith tests
-Requires: python3-%{sname} = %{version}-%{release}
-Requires: python3-mock
-Requires: python3-testtools
-
-%description -n python3-%{sname}-tests
-%{common_desc_tests}
-
-%endif # with_python3
 
 %if 0%{?with_doc}
 %package -n python-%{sname}-doc
 Summary: %{common_summary} - documentation
 
-BuildRequires: python2-sphinx
-BuildRequires: python2-sphinxcontrib-apidoc
+BuildRequires: python%{pyver}-sphinx
+BuildRequires: python%{pyver}-sphinxcontrib-apidoc
 
 %description -n python-%{sname}-doc
 %{common_summary}
@@ -115,7 +89,7 @@ Summary: %{common_summary} - ansible role
 
 # The ansible role uses CLI which is currently provided by the Python 2
 # package. Change this when the CLI is provided by the Python 3 package.
-Requires: python2-%{sname} = %{version}-%{release}
+Requires: python%{pyver}-%{sname} = %{version}-%{release}
 Requires: ansible >= 2.3
 
 %description -n ansible-role-%{sname}-deployment
@@ -131,72 +105,35 @@ in ansible playbooks.
 %py_req_cleanup
 
 %build
-%py2_build
-%if 0%{?with_python3}
-%py3_build
-%endif # with_python3
+%{pyver_build}
 
 %if 0%{?with_doc}
 # generate html docs
-sphinx-build -b html doc/source doc/build/html
-# remove the sphinx-build leftovers
+sphinx-build-%{pyver} -b html doc/source doc/build/html
+# remove the sphinx-build-%{pyver} leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %install
-%if 0%{?with_python3}
-%py3_install
-# Follow Python guidelines around Python CLI versioning
-pushd %{buildroot}/%{_bindir}
-mv metalsmith{,-%{python3_version}}
-ln -s metalsmith{-%{python3_version},-3}
-popd
-%endif # with_python3
+%{pyver_install}
 
-%py2_install
-# Follow Python guidelines around Python CLI versioning
-pushd %{buildroot}/%{_bindir}
-mv metalsmith{,-2.7}
-ln -s metalsmith{-2.7,-2}
-# This is the final binary that actual humans will be using
-ln -s metalsmith{-2,}
-popd
+# Create a versioned binary for backwards compatibility until everything is pure py3
+ln -s metalsmith %{buildroot}%{_bindir}/metalsmith-%{pyver}
 
 %check
-stestr run
+stestr-%{pyver} run
 
-%if 0%{?with_python3}
-stestr-3 run
-%endif # with_python3
-
-%files -n python2-%{sname}
+%files -n python%{pyver}-%{sname}
 %license LICENSE
 %{_bindir}/metalsmith
-%{_bindir}/metalsmith-2
-%{_bindir}/metalsmith-2.7
-%{python2_sitelib}/%{sname}
-%{python2_sitelib}/%{sname}-*.egg-info
-%exclude %{python2_sitelib}/%{sname}/test
+%{_bindir}/metalsmith-%{pyver}
+%{pyver_sitelib}/%{sname}
+%{pyver_sitelib}/%{sname}-*.egg-info
+%exclude %{pyver_sitelib}/%{sname}/test
 
-%files -n python2-%{sname}-tests
+%files -n python%{pyver}-%{sname}-tests
 %license LICENSE
-%{python2_sitelib}/%{sname}/test
-
-%if 0%{?with_python3}
-
-%files -n python3-%{sname}
-%license LICENSE
-%{_bindir}/metalsmith-3
-%{_bindir}/metalsmith-%{python3_version}
-%{python3_sitelib}/%{sname}
-%{python3_sitelib}/%{sname}-*.egg-info
-%exclude %{python3_sitelib}/%{sname}/test
-
-%files -n python3-%{sname}-tests
-%license LICENSE
-%{python3_sitelib}/%{sname}/test
-
-%endif # with_python3
+%{pyver_sitelib}/%{sname}/test
 
 %if 0%{?with_doc}
 %files -n python-%{sname}-doc
