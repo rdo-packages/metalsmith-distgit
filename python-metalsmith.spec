@@ -90,7 +90,12 @@ Summary: %{common_summary} - ansible role
 # The ansible role uses CLI which is currently provided by the Python 2
 # package. Change this when the CLI is provided by the Python 3 package.
 Requires: python%{pyver}-%{sname} = %{version}-%{release}
+# Handle python2 exception
+%if %{pyver} == 2
 Requires: ansible >= 2.3
+%else
+Requires: ansible-python3 >= 2.3
+%endif
 
 %description -n ansible-role-%{sname}-deployment
 %{common_summary}
