@@ -45,15 +45,14 @@ BuildRequires: python%{pyver}-devel
 BuildRequires: python%{pyver}-pbr
 BuildRequires: python%{pyver}-setuptools
 # Required for running unit tests
-BuildRequires: python%{pyver}-ironicclient
 BuildRequires: python%{pyver}-mock
 BuildRequires: python%{pyver}-openstacksdk
 BuildRequires: python%{pyver}-six
 BuildRequires: python%{pyver}-stestr
 BuildRequires: python%{pyver}-testtools
 
-Requires: python%{pyver}-ironicclient >= 1.14.0
-Requires: python%{pyver}-openstacksdk >= 0.11.0
+Requires: genisoimage
+Requires: python%{pyver}-openstacksdk >= 0.22.0
 Requires: python%{pyver}-pbr >= 2.0.0
 Requires: python%{pyver}-six >= 1.10.0
 
