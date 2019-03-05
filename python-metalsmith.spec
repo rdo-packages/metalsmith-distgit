@@ -55,6 +55,12 @@ Requires: genisoimage
 Requires: python%{pyver}-openstacksdk >= 0.22.0
 Requires: python%{pyver}-pbr >= 2.0.0
 Requires: python%{pyver}-six >= 1.10.0
+Requires: python%{pyver}-requests >= 2.18.4
+
+# Handle python2 exception
+%if %{pyver} == 2
+Requires:       python-enum34
+%endif
 
 Requires(pre): shadow-utils
 
