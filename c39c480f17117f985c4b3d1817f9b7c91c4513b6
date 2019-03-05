@@ -16,6 +16,24 @@
       "revId": "c39c480f17117f985c4b3d1817f9b7c91c4513b6",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a38a89dc_cf2bf306",
+        "filename": "python-metalsmith.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2019-03-05T12:21:49Z",
+      "side": 1,
+      "message": "sure will add them explicitly, currently those are pulled indirectly via eventlet and python-sphinx.",
+      "parentUuid": "bb8ed8df_f0561f7e",
+      "revId": "c39c480f17117f985c4b3d1817f9b7c91c4513b6",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
