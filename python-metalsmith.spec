@@ -137,7 +137,7 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 ln -s metalsmith %{buildroot}%{_bindir}/metalsmith-%{pyver}
 
 %check
-stestr-%{pyver} run
+PYTHON=%{pyver_bin} stestr-%{pyver} run
 
 %files -n python%{pyver}-%{sname}
 %license LICENSE
