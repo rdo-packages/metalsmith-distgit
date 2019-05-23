@@ -105,7 +105,7 @@ Requires: python%{pyver}-%{sname} = %{version}-%{release}
 %if %{pyver} == 2
 Requires: ansible >= 2.3
 %else
-Requires: ansible-python3 >= 2.3
+Requires: python3dist(ansible) >= 2.3
 %endif
 
 %description -n ansible-role-%{sname}-deployment
