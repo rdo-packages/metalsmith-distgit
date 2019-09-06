@@ -165,3 +165,4 @@ PYTHON=%{pyver_bin} stestr-%{pyver} run
 %exclude %{_datadir}/ansible/roles/metalsmith_deployment/README.rst
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/metalsmith/commit/?id=2d9b7cadf5faa9d6343a013b2989a3d83e6d75aa
