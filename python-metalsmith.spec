@@ -88,7 +88,9 @@ Requires: python%{pyver}-testtools
 Summary: %{common_summary} - documentation
 
 BuildRequires: python%{pyver}-sphinx
+BuildRequires: python%{pyver}-openstackdocstheme
 BuildRequires: python%{pyver}-sphinxcontrib-apidoc
+BuildRequires: python%{pyver}-sphinxcontrib-rsvgconverter
 
 %description -n python-%{sname}-doc
 %{common_summary}
