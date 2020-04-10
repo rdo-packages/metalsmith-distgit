@@ -48,7 +48,6 @@ BuildRequires: python%{pyver}-setuptools
 BuildRequires: python%{pyver}-mock
 BuildRequires: python%{pyver}-openstacksdk
 BuildRequires: python%{pyver}-prettytable
-BuildRequires: python%{pyver}-six
 BuildRequires: python%{pyver}-stestr
 BuildRequires: python%{pyver}-testtools
 BuildRequires: python%{pyver}-requests
@@ -61,7 +60,6 @@ BuildRequires:       python-enum34
 Requires: python%{pyver}-openstacksdk >= 0.29.0
 Requires: python%{pyver}-pbr >= 2.0.0
 Requires: python%{pyver}-prettytable >= 0.7.2
-Requires: python%{pyver}-six >= 1.10.0
 Requires: python%{pyver}-requests >= 2.18.4
 
 # Handle python2 exception
