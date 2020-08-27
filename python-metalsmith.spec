@@ -38,6 +38,7 @@ BuildRequires: python3-prettytable
 BuildRequires: python3-stestr
 BuildRequires: python3-testtools
 BuildRequires: python3-requests
+BuildRequires: ansible >= 2.9.10
 
 
 Requires: python3-openstacksdk >= 0.29.0
@@ -134,8 +135,8 @@ PYTHON=%{__python3} stestr-3 run
 
 %files -n ansible-role-%{sname}-deployment
 %license LICENSE
-%doc roles/metalsmith_deployment/README.rst
-%{_datadir}/ansible/roles/metalsmith_deployment
+%doc metalsmith_ansible/roles/metalsmith_deployment/README.rst
+%{_datadir}/ansible
 %exclude %{_datadir}/ansible/roles/metalsmith_deployment/README.rst
 
 %changelog
