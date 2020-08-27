@@ -38,7 +38,7 @@ BuildRequires: python3-prettytable
 BuildRequires: python3-stestr
 BuildRequires: python3-testtools
 BuildRequires: python3-requests
-
+BuildRequires: ansible >= 2.6
 
 Requires: python3-openstacksdk >= 0.29.0
 Requires: python3-pbr >= 2.0.0
@@ -56,6 +56,7 @@ Summary: metalsmith tests
 Requires: python3-%{sname} = %{version}-%{release}
 Requires: python3-mock
 Requires: python3-testtools
+Requires: ansible >= 2.6
 
 %description -n python3-%{sname}-tests
 %{common_desc_tests}
