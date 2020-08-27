@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0f53501c_7dbc846b",
+        "filename": "python-metalsmith.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 78
+      },
+      "writtenOn": "2020-08-27T15:55:18Z",
+      "side": 1,
+      "message": "could you propose this upstream if it\u0027s required?",
+      "revId": "71170fef3d14bb49dc3efadf906a2e36e10d83c2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
