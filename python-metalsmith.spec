@@ -4,7 +4,8 @@
 %global sname metalsmith
 
 %global common_summary Bare metal provisioner using Ironic
-%global common_desc Simple Python library and CLI tool to provision bare metal machines using OpenStack Ironic.
+%global common_desc Simple Python library and CLI tool to \
+provision bare metal machines using OpenStack Ironic.
 %global common_desc_tests Tests for metalsmith.
 
 Name: python-%{sname}
@@ -38,7 +39,7 @@ BuildRequires: python3-prettytable
 BuildRequires: python3-stestr
 BuildRequires: python3-testtools
 BuildRequires: python3-requests
-
+BuildRequires: ansible >= 2.6
 
 Requires: python3-openstacksdk >= 0.29.0
 Requires: python3-pbr >= 2.0.0
@@ -56,6 +57,7 @@ Summary: metalsmith tests
 Requires: python3-%{sname} = %{version}-%{release}
 Requires: python3-mock
 Requires: python3-testtools
+Requires: ansible >= 2.6
 
 %description -n python3-%{sname}-tests
 %{common_desc_tests}
@@ -94,6 +96,10 @@ in ansible playbooks.
 
 # Let's handle dependencies ourseleves
 %py_req_cleanup
+
+# remove shebangs and fix permissions
+sed -i '1{/^#!/d}' metalsmith_ansible/ansible_plugins/modules/metalsmith_instances.py
+chmod u=rw,go=r metalsmith_ansible/ansible_plugins/modules/metalsmith_instances.py
 
 %build
 %{py3_build}
@@ -134,8 +140,9 @@ PYTHON=%{__python3} stestr-3 run
 
 %files -n ansible-role-%{sname}-deployment
 %license LICENSE
-%doc roles/metalsmith_deployment/README.rst
+%doc metalsmith_ansible/roles/metalsmith_deployment/README.rst
 %{_datadir}/ansible/roles/metalsmith_deployment
+%{_datadir}/ansible/plugins
 %exclude %{_datadir}/ansible/roles/metalsmith_deployment/README.rst
 
 %changelog
