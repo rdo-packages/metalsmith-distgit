@@ -38,6 +38,7 @@ BuildRequires: python3-prettytable
 BuildRequires: python3-stestr
 BuildRequires: python3-testtools
 BuildRequires: python3-requests
+BuildRequires: ansible >= 2.9.10
 
 
 Requires: python3-openstacksdk >= 0.29.0
