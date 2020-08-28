@@ -98,8 +98,11 @@ in ansible playbooks.
 %py_req_cleanup
 
 # remove shebangs and fix permissions
-sed -i '1{/^#!/d}' metalsmith_ansible/ansible_plugins/modules/metalsmith_instances.py
-chmod u=rw,go=r metalsmith_ansible/ansible_plugins/modules/metalsmith_instances.py
+if [ -f metalsmith_ansible/ansible_plugins/modules/metalsmith_instances.py ]; then
+  sed -i '1{/^#!/d}' metalsmith_ansible/ansible_plugins/modules/metalsmith_instances.py
+  chmod u=rw,go=r metalsmith_ansible/ansible_plugins/modules/metalsmith_instances.py
+fi
+
 
 %build
 %{py3_build}
@@ -113,6 +116,10 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 
 %install
 %{py3_install}
+
+if [ ! -d %{buildroot}%{_datadir}/ansible/plugins ]; then
+  mkdir -p %{buildroot}%{_datadir}/ansible/plugins
+fi
 
 # Create a versioned binary for backwards compatibility until everything is pure py3
 ln -s metalsmith %{buildroot}%{_bindir}/metalsmith-3
@@ -140,7 +147,7 @@ PYTHON=%{__python3} stestr-3 run
 
 %files -n ansible-role-%{sname}-deployment
 %license LICENSE
-%doc metalsmith_ansible/roles/metalsmith_deployment/README.rst
+%doc README.rst
 %{_datadir}/ansible/roles/metalsmith_deployment
 %{_datadir}/ansible/plugins
 %exclude %{_datadir}/ansible/roles/metalsmith_deployment/README.rst
