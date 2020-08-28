@@ -1,0 +1,10 @@
+Code-Review+2: Chandan Kumar <chkumar@redhat.com>
+Code-Review+1: Iury Gregory Melo Ferreira <iurygregory@gmail.com>
+Code-Review+2: Alfredo Moralejo <amoralej@redhat.com>
+Workflow+1: Alfredo Moralejo <amoralej@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Fri, 28 Aug 2020 10:50:29 +0000
+Reviewed-on: https://review.rdoproject.org/r/29092
+Project: openstack/metalsmith-distgit
+Branch: refs/heads/rpm-master
