@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ec36dcf2_c36844c3",
+        "filename": "python-metalsmith.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 78
+      },
+      "writtenOn": "2020-09-25T11:15:06Z",
+      "side": 1,
+      "message": "I think this should be raised to 2.9, which was the first version to support collections.",
+      "revId": "24f736c6aa9ee077eb27fc0115fe20dde6dc4168",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
