@@ -16,6 +16,24 @@
       "revId": "24f736c6aa9ee077eb27fc0115fe20dde6dc4168",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "de58ca2f_57cf68f4",
+        "filename": "python-metalsmith.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 147
+      },
+      "writtenOn": "2020-09-27T20:40:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec36dcf2_c36844c3",
+      "revId": "24f736c6aa9ee077eb27fc0115fe20dde6dc4168",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
