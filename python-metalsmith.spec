@@ -11,8 +11,8 @@ provision bare metal machines using OpenStack Ironic.
 %global common_desc_tests Tests for metalsmith.
 
 Name: python-%{sname}
-Version: 1.2.0
-Release: 2%{?dist}
+Version: 1.2.1
+Release: 1%{?dist}
 Summary: %{common_summary}
 License: ASL 2.0
 URL: https://docs.openstack.org/metalsmith/latest/
@@ -170,6 +170,9 @@ PYTHON=%{__python3} stestr-3 run
 %exclude %{_datadir}/ansible/roles/metalsmith_deployment/README.rst
 
 %changelog
+* Mon Feb 15 2021 RDO <dev@lists.rdoproject.org> 1.2.1-1
+- Update to 1.2.1
+
 * Wed Oct 21 2020 Joel Capitao <jcapitao@redhat.com> 1.2.0-2
 - Enable sources tarball validation using GPG signature.
 
