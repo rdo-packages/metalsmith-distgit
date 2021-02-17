@@ -1,0 +1,9 @@
+Code-Review+2: Dmitry Tantsur <dtantsur@protonmail.com>
+Code-Review+2: Alfredo Moralejo <amoralej@redhat.com>
+Workflow+1: Alfredo Moralejo <amoralej@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Wed, 17 Feb 2021 10:50:21 +0000
+Reviewed-on: https://review.rdoproject.org/r/31968
+Project: openstack/metalsmith-distgit
+Branch: refs/heads/victoria-rdo
