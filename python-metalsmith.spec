@@ -70,7 +70,7 @@ Summary: metalsmith tests
 Requires: python3-%{sname} = %{version}-%{release}
 Requires: python3-mock
 Requires: python3-testtools
-Requires: ansible >= 2.6
+Requires: (python3dist(ansible) >= 2.6 or ansible-core >= 2.11)
 
 %description -n python3-%{sname}-tests
 %{common_desc_tests}
@@ -96,7 +96,7 @@ Summary: %{common_summary} - ansible role
 # The ansible role uses CLI which is currently provided by the Python 2
 # package. Change this when the CLI is provided by the Python 3 package.
 Requires: python3-%{sname} = %{version}-%{release}
-Requires: python3dist(ansible) >= 2.9
+Requires: (python3dist(ansible) >= 2.9 or ansible-core >= 2.11)
 Requires: ansible-role-openstack-operations
 
 %description -n ansible-role-%{sname}-deployment
