@@ -1,0 +1,9 @@
+Code-Review+2: Alfredo Moralejo <amoralej@redhat.com>
+Code-Review+2: Yatin Karel <ykarel@redhat.com>
+Workflow+1: Yatin Karel <ykarel@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Tue, 21 Sep 2021 11:55:13 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/metalsmith-distgit/+/35698
+Project: openstack/metalsmith-distgit
+Branch: refs/heads/rpm-master
