@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3130b533_782fbc75",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2022-04-05T16:23:55Z",
+      "side": 1,
+      "message": "needs ansible-role-openstack-operations which is from ooo",
+      "revId": "90a6fcf674ed1905911f02d756df9638f5bf4277",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
