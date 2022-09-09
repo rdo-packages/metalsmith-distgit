@@ -1,9 +1,9 @@
 # UUID Group Name
 global:Registered-Users	Registered Users
 6ddfecad023c6f4fa3ac8c4d2583c502ea675a73	Service Users
+global:Anonymous-Users	Anonymous Users
+05a678d3d4a168e149d5e8a0063bbd1b1c5526da	Administrators
 4572c517702492251ad622a289176552a8acbbb2	rdo-superusers
+401cf37bee35d1c809d4d957e55f2a304f8eed69	rdo-provenpackagers
 e1f20c6e2a62b2a38d5ff9c5cbd610d7243af3dd	openstack/metalsmith-core
 e6a5bc9110102855a9f617354f5b7a78e1f7b0e3	openstack/metalsmith-ptl
-05a678d3d4a168e149d5e8a0063bbd1b1c5526da	Administrators
-global:Anonymous-Users	Anonymous Users
-401cf37bee35d1c809d4d957e55f2a304f8eed69	rdo-provenpackagers
