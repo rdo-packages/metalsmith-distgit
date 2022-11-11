@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x01527a34f0d0080f8a5db8d6eb6c5df21b4b6363
+%global sources_gpg_sign 0xa7475c5f2122fec3f90343223fe3bf5aad1080e4
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global with_doc 1
@@ -11,7 +11,7 @@ provision bare metal machines using OpenStack Ironic.
 %global common_desc_tests Tests for metalsmith.
 
 Name: python-%{sname}
-Version: 1.5.2
+Version: 1.5.3
 Release: 1%{?dist}
 Summary: %{common_summary}
 License: ASL 2.0
@@ -171,6 +171,9 @@ PYTHON=%{__python3} stestr-3 run
 %exclude %{_datadir}/ansible/roles/metalsmith_deployment/README.rst
 
 %changelog
+* Fri Nov 11 2022 RDO <dev@lists.rdoproject.org> 1.5.3-1
+- Update to 1.5.3
+
 * Mon Dec 13 2021 RDO <dev@lists.rdoproject.org> 1.5.2-1
 - Update to 1.5.2
 
