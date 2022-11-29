@@ -10,12 +10,9 @@
 provision bare metal machines using OpenStack Ironic.
 %global common_desc_tests Tests for metalsmith.
 
-# Enable bootstrap mode to break cyclic dep
-%global repo_bootstrap 1
-
 Name: python-%{sname}
 Version: 1.8.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: %{common_summary}
 License: ASL 2.0
 URL: https://docs.openstack.org/metalsmith/latest/
@@ -177,6 +174,9 @@ PYTHON=%{__python3} stestr-3 run
 %exclude %{_datadir}/ansible/roles/metalsmith_deployment/README.rst
 
 %changelog
+* Tue Nov 29 2022 Alfredo Moralejo <amoralej@redhat.com> 1.8.0-2
+- Disable bootstrap mode
+
 * Tue Sep 20 2022 RDO <dev@lists.rdoproject.org> 1.8.0-1
 - Update to 1.8.0
 
