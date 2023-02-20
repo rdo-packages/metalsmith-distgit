@@ -112,6 +112,10 @@ in ansible playbooks.
 %endif
 %autosetup -n %{sname}-%{upstream_version} -S git
 
+# ansible-core is now built for py3.11 but we are running py3.9. 
+# So, we need to remove the build of ansible documentation only.
+sed -i '/ansible-autodoc/d' doc/source/conf.py
+
 # Let's handle dependencies ourseleves
 %py_req_cleanup
 
