@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0xa7475c5f2122fec3f90343223fe3bf5aad1080e4
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global with_doc 1
@@ -11,8 +11,8 @@ provision bare metal machines using OpenStack Ironic.
 %global common_desc_tests Tests for metalsmith.
 
 Name: python-%{sname}
-Version: XXX
-Release: XXX
+Version: 1.10.0
+Release: 1%{?dist}
 Summary: %{common_summary}
 License: ASL 2.0
 URL: https://docs.openstack.org/metalsmith/latest/
@@ -97,7 +97,7 @@ Summary: %{common_summary} - ansible role
 # package. Change this when the CLI is provided by the Python 3 package.
 Requires: python3-%{sname} = %{version}-%{release}
 Requires: (python3dist(ansible) >= 2.9 or ansible-core >= 2.11)
-Requires: ansible-role-openstack-operations
+Requires: ansible-collections-openstack
 
 %description -n ansible-role-%{sname}-deployment
 %{common_summary}
@@ -177,3 +177,6 @@ PYTHON=%{__python3} stestr-3 run
 %exclude %{_datadir}/ansible/roles/metalsmith_deployment/README.rst
 
 %changelog
+* Thu Mar 09 2023 RDO <dev@lists.rdoproject.org> 1.10.0-1
+- Update to 1.10.0
+
