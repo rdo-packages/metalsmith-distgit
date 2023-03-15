@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bfe96cd_a749b684",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 682
+      },
+      "writtenOn": "2023-03-15T14:40:27Z",
+      "side": 1,
+      "message": "@Steve Could you double check this ? I looked into ansible modules in metalsmith repo but could not find any reference to openstack-operations, but it seems the module requires collections-openstack (eg. https://github.com/openstack/metalsmith/blob/master/metalsmith_ansible/ansible_plugins/modules/metalsmith_instances.py#L22-L24 )",
+      "revId": "984465c43e51643256bf5b909ea0e9633cb0b0b1",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
