@@ -97,7 +97,7 @@ Summary: %{common_summary} - ansible role
 # package. Change this when the CLI is provided by the Python 3 package.
 Requires: python3-%{sname} = %{version}-%{release}
 Requires: (python3dist(ansible) >= 2.9 or ansible-core >= 2.11)
-Requires: ansible-role-openstack-operations
+Requires: ansible-role-collections-openstack
 
 %description -n ansible-role-%{sname}-deployment
 %{common_summary}
