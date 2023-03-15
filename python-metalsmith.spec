@@ -99,7 +99,7 @@ Requires: python3-%{sname} = %{version}-%{release}
 Requires: (python3dist(ansible) >= 2.9 or ansible-core >= 2.11)
 
 %if 0%{?repo_bootstrap} == 0
-Requires: ansible-role-openstack-operations
+Requires: ansible-collections-openstack
 %endif
 
 %description -n ansible-role-%{sname}-deployment
