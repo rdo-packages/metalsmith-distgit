@@ -16,6 +16,24 @@
       "message": "it requires ansible-role-openstack-operations",
       "revId": "e687207def88899222dcb9f544e0cd75757316cb",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55e72a10_1aca247d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 682
+      },
+      "writtenOn": "2023-03-16T08:15:21Z",
+      "side": 1,
+      "message": "I\u0027ve submit the backport to fix the wrong dependency here https://review.rdoproject.org/r/c/openstack/metalsmith-distgit/+/47634 .\n\nWe can merge it to get rid of ansible-role-openstack-operations.",
+      "parentUuid": "ee9fbbe3_0fe408a0",
+      "revId": "e687207def88899222dcb9f544e0cd75757316cb",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
