@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "987d4096_1eeccdc8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 682
+      },
+      "writtenOn": "2023-03-16T08:30:32Z",
+      "side": 1,
+      "message": "Looks like the error caused by recent ansible in CentOS 9\n\n```\n2023-03-16 08:23:22.320051 | rdo-centos-8-stream | 2023-03-16 08:23:22,319 INFO:dlrn-build-mock:DEBUG: Exception occurred:\n2023-03-16 08:23:22.321395 | rdo-centos-8-stream | 2023-03-16 08:23:22,321 INFO:dlrn-build-mock:DEBUG:   File \"metalsmith_ansible/ansible_plugins/modules/metalsmith_instances.py\", line 20, in \u003cmodule\u003e\n2023-03-16 08:23:22.321557 | rdo-centos-8-stream | 2023-03-16 08:23:22,321 INFO:dlrn-build-mock:DEBUG:     from ansible.module_utils.basic import AnsibleModule\n2023-03-16 08:23:22.321674 | rdo-centos-8-stream | 2023-03-16 08:23:22,321 INFO:dlrn-build-mock:DEBUG: ModuleNotFoundError: No module named \u0027ansible\u0027\n```",
+      "revId": "ce578240a1f1d2fd56d7f8384d06534dde1d1cf0",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
