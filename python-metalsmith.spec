@@ -112,10 +112,6 @@ in ansible playbooks.
 %endif
 %autosetup -n %{sname}-%{upstream_version} -S git
 
-# ansible-core is now built for py3.11 but we are running py3.9.
-# So, we need to remove the build of ansible documentation only.
-sed -i '/ansible-autodoc/d' doc/source/conf.py
-
 # Let's handle dependencies ourseleves
 %py_req_cleanup
 
@@ -147,8 +143,6 @@ fi
 ln -s metalsmith %{buildroot}%{_bindir}/metalsmith-3
 
 %check
-# remove the test module which loads the ansible plugin
-rm metalsmith/test/test_metalsmith_instances.py
 PYTHON=%{__python3} stestr-3 run
 
 %files -n python3-%{sname}
