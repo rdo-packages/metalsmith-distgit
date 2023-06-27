@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f8f8a7f_b0b16789",
+        "filename": "python-metalsmith.spec",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-06-27T13:17:55Z",
+      "side": 1,
+      "message": "This should go in the -docs subpackage, included in the with_doc conditional.",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 6
+      },
+      "revId": "e46467a284a452f6cfd054bd896f395d39ee7857",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
