@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5fe14a5_f2ae7056",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-06-27T12:35:30Z",
+      "side": 1,
+      "message": "it needs back BuildRequires:  python3-sphinxcontrib-rsvgconverter \n\nit\u0027s available in doc/source/conf.py [1] but it\u0027s not resolved by the pyproject-rpm-macros\n\n[1] https://opendev.org/openstack/metalsmith/src/commit/96783e2613057024244874c50e7b567c75c5d764/doc/source/conf.py#L27\n\n",
+      "revId": "ae7d1261fe5af5fc413089aa583394187beb94ea",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
