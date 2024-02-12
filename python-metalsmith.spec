@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0xa63ea142678138d1bb15f2e303bdfd64dd164087
+%global sources_gpg_sign 0x2ef3fe0ec2b075ab7458b5f8b702b20b13df2318
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global with_doc 1
@@ -11,8 +11,8 @@ provision bare metal machines using OpenStack Ironic.
 %global common_desc_tests Tests for metalsmith.
 
 Name: python-%{sname}
-Version: 1.8.0
-Release: 2%{?dist}
+Version: 1.8.1
+Release: 1%{?dist}
 Summary: %{common_summary}
 License: ASL 2.0
 URL: https://docs.openstack.org/metalsmith/latest/
@@ -180,6 +180,9 @@ PYTHON=%{__python3} stestr-3 run
 %exclude %{_datadir}/ansible/roles/metalsmith_deployment/README.rst
 
 %changelog
+* Mon Feb 12 2024 RDO <dev@lists.rdoproject.org> 1.8.1-1
+- Update to 1.8.1
+
 * Tue Nov 29 2022 Alfredo Moralejo <amoralej@redhat.com> 1.8.0-2
 - Disable bootstrap mode
 
