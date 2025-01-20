@@ -57,7 +57,6 @@ Requires(pre): shadow-utils
 %package -n python3-%{sname}-tests
 Summary: metalsmith tests
 Requires: python3-%{sname} = %{version}-%{release}
-Requires: python3-mock
 Requires: python3-testtools
 Requires: (python3dist(ansible) >= 2.6 or ansible-core >= 2.11)
 
