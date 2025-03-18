@@ -15,8 +15,8 @@ provision bare metal machines using OpenStack Ironic.
 %global common_desc_tests Tests for metalsmith.
 
 Name: python-%{sname}
-Version: XXX
-Release: XXX
+Version: 2.4.1
+Release: 1%{?dist}
 Summary: %{common_summary}
 License: Apache-2.0
 URL: https://docs.openstack.org/metalsmith/latest/
@@ -182,3 +182,6 @@ ln -s metalsmith %{buildroot}%{_bindir}/metalsmith-3
 %exclude %{_datadir}/ansible/roles/metalsmith_deployment/README.rst
 
 %changelog
+* Tue Mar 18 2025 RDO <dev@lists.rdoproject.org> 2.4.1-1
+- Update to 2.4.1
+
