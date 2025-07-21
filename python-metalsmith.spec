@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2ef3fe0ec2b075ab7458b5f8b702b20b13df2318
+%global sources_gpg_sign 0x22284f69d9eccdf3df7819791c711af193ff8e54
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 # we are excluding some runtime reqs from automatic generator
 %global excluded_reqs ansible
@@ -15,7 +15,7 @@ provision bare metal machines using OpenStack Ironic.
 %global common_desc_tests Tests for metalsmith.
 
 Name: python-%{sname}
-Version: 2.1.1
+Version: 2.1.2
 Release: 1%{?dist}
 Summary: %{common_summary}
 License: Apache-2.0
@@ -182,6 +182,9 @@ ln -s metalsmith %{buildroot}%{_bindir}/metalsmith-3
 %exclude %{_datadir}/ansible/roles/metalsmith_deployment/README.rst
 
 %changelog
+* Mon Jul 21 2025 RDO <dev@lists.rdoproject.org> 2.1.2-1
+- Update to 2.1.2
+
 * Thu Mar 14 2024 RDO <dev@lists.rdoproject.org> 2.1.1-1
 - Update to 2.1.1
 
